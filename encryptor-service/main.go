@@ -1,8 +1,8 @@
 package main
 
 import (
-	encryptorServer "exam_encryptor/encryptor-service/Server"
-	pr "exam_encryptor/encryptor-service/proto"
+	encryptorServer "github.com/VladFlaber/exam_encryptor/encryptor-service/Server"
+	pr "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
 	"google.golang.org/grpc"
 	"log"
 	"net"

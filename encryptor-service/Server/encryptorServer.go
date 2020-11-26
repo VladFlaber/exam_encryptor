@@ -2,8 +2,8 @@ package encryptorServer
 
 import (
 	"context"
-	pr "exam_encryptor/encryptor-service/proto"
-	"exam_encryptor/encryptor-service/stringEncryptor"
+	pr "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
+	"github.com/VladFlaber/exam_encryptor/encryptor-service/stringEncryptor"
 	"log"
 )
 type Server struct {

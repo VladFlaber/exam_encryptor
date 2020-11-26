@@ -2,7 +2,7 @@ package client
 
 import (
 	"context"
-	pr "exam_encryptor/encryptor-service/proto"
+	pr "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
 	"google.golang.org/grpc"
 	"log"
 )

@@ -1,10 +1,10 @@
 package main
 
 import (
- pr "exam_encryptor/encryptor-service/proto"
- "exam_encryptor/randomizer-service/client"
- "exam_encryptor/randomizer-service/stringGenerator"
  "fmt"
+ pr "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
+ "github.com/VladFlaber/exam_encryptor/randomizer-service/client"
+ "github.com/VladFlaber/exam_encryptor/randomizer-service/stringGenerator"
  "log"
  "os"
  "strconv"

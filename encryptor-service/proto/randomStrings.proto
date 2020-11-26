@@ -1,6 +1,6 @@
 syntax ="proto3";
-package    encryptor_service;
-option go_package="exam_encryptor/encryptor-service/proto";
+package    proto;
+option go_package="github.com/VladFlaber/exam_encryptor/encryptor-service/proto";
     message listOfStrings {
       //list of string to pass to the encryptor
       repeated string list= 1;
