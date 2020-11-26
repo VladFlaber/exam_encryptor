@@ -1,0 +1,16 @@
+syntax ="proto3";
+package    encryptor_service;
+option go_package="exam_encryptor/encryptor-service/proto";
+    message listOfStrings {
+      //list of string to pass to the encryptor
+      repeated string list= 1;
+    }
+    //response with encrypted slice of strings
+    message Response{
+      repeated string list=1;
+      string oneStr=2;
+    }
+
+    service stringsService{
+      rpc GetSha256Strings(listOfStrings) returns (Response);
+    }
