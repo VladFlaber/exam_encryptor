@@ -36,6 +36,7 @@ func createAndSend(stringsCount int ,charset string ,generator stringGenerator.I
   fmt.Println(index+1, ": ", value)
  }
  if randomStrings != nil && len(randomStrings) > 0 {
+
   message:= pr.ListOfStrings{
    List: randomStrings,
   }

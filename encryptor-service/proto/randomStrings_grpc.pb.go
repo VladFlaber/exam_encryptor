@@ -30,7 +30,7 @@ func NewStringsServiceClient(cc grpc.ClientConnInterface) StringsServiceClient {
 
 func (c *stringsServiceClient) GetSha256Strings(ctx context.Context, in *ListOfStrings, opts ...grpc.CallOption) (*Response, error) {
 	out := new(Response)
-	err := c.cc.Invoke(ctx, "/encryptor_service.stringsService/GetSha256Strings", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/proto.stringsService/GetSha256Strings", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,7 +75,7 @@ func _StringsService_GetSha256Strings_Handler(srv interface{}, ctx context.Conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/encryptor_service.stringsService/GetSha256Strings",
+		FullMethod: "/proto.stringsService/GetSha256Strings",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(StringsServiceServer).GetSha256Strings(ctx, req.(*ListOfStrings))
@@ -84,7 +84,7 @@ func _StringsService_GetSha256Strings_Handler(srv interface{}, ctx context.Conte
 }
 
 var _StringsService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "encryptor_service.stringsService",
+	ServiceName: "proto.stringsService",
 	HandlerType: (*StringsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

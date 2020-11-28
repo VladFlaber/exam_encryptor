@@ -2,7 +2,7 @@ package main
 
 import (
 	encryptorServer "github.com/VladFlaber/exam_encryptor/encryptor-service/Server"
-	pr "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
+	 "github.com/VladFlaber/exam_encryptor/encryptor-service/proto"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -21,6 +21,6 @@ func main()  {
 	log.Println("Server started listening : ",address)
 	ser:=encryptorServer.Server{}
 	grpcServer := grpc.NewServer()
-	pr.RegisterStringsServiceServer(grpcServer, &ser)
+	proto.RegisterStringsServiceServer(grpcServer, &ser)
 	grpcServer.Serve(lis)
  }
