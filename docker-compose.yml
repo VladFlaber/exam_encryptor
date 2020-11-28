@@ -2,19 +2,17 @@ version: '3.5'
 
 services:
   encryptor-service:
+    build: ./encryptor-service
     ports:
-    - 9000:9000
-    env_file:
-      - services-ev.env
-    build:
-      ./encryptor-service
+    - 9000:23455
+    environment:
+      service_adress: "9000"
 
   randomizer-service:
+    build: ./randomizer-service
     ports:
-    - 9000:9001
-    env_file:
-      - services-ev.env
-    build:
-      ./randomizer-service
-    depends_on:
-      - encryptor-service
+    - 9000:23456
+    environment:
+      service_adress: "9001"
+   # depends_on:
+     # - encryptor-service

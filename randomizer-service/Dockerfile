@@ -1,10 +1,25 @@
-FROM  golang:alpine as builder
+FROM golang:alpine as builder
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache git
+
 RUN mkdir /app
-WORKDIR  /app
+WORKDIR /app
+
+ENV GO111MODULE=on
+
 COPY . .
-#ENV GO111MODULE=on
+
+RUN go mod download
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o shippy-service-consignment *.go
+
+# Run container
 FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
 RUN mkdir /app
 WORKDIR /app
 COPY --from=builder /app/randomizer-service .
-ENTRYPOINT ["./randomizer-service"]
+
+#CMD ["./randomizer-service"]
